@@ -1,0 +1,10 @@
+ethernet.out 
+ethernet.p7s 
+*go=ethernet.out 
+*smdl=1 
+HOSTIP=10.30.13.178
+PORTNUM=5006
+LOOPCNT=100
+ETH_PORT=1
+*NO.VXCE=1
+*NO.VXNCP=1

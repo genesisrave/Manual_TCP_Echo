@@ -1,0 +1,55 @@
+
+		********************************
+		*   ETHERNET - TCP ECHO TEST   *
+		********************************
+
+===================
+Setup Requirements:
+===================
+	- Vx Terminal with Ethernet Support
+	- Simple Server
+		
+==================
+Vx Terminal Setup:
+==================
+	- Vx Terminal must be loaded in the latest EOS package.
+	- Connect Vx Terminal to a network same with the Host PC
+
+=============================	
+Test Application Requirement:
+=============================
+	- Modify makefile to indicate the correct EOS SDK file directory.
+	- Compile test application in the following folders
+	- Modify ETH_PORT in ZontalkNet.dld to Ethernet Device. 
+		1 - DEV_ETH1
+		2 - DEV_ETH2
+		Default is DEV_ETH1
+		
+===============================	
+Simple Server Application Setup
+===============================
+	- Run Simple Server on Host PC. (For Windows 7 PC, run this as Administrator).
+	- Input Host PC IP Address in Interface field
+	- Input Host Port Number in Endpoint field. This should be the same with the PORTNUM variable in Tcp_Echo.DLD
+	- Input TCP in Protocol field.
+	- Press START Button. There should be no error displayed in the server. 
+	- There server should now display "Listening on port <endpoint>, protocol TCP" 	
+			
+
+***********************	
+*   Test Procedure:   *
+***********************
+
+1. Modify HOSTIP variable in TCP_ECHO.DLD for the HOST PC IP Address.
+2. Modify PORTNUM variable in TCP_ECHO.DLD for Host PC port. This should be the same with the Endpoint field in Simple Server App.
+	- Suggested PORTNUM values are 5001 to 5015.
+3. Make sure terminal and Host PC are in the SAME Network.
+4. Execute Run_TCP_Echo.bat to download application.
+5. Capture log.
+6. Let the application run.
+7. The application will run for 100 loops. Data sent will be 512, 1024, 2048, 3072, 4096, 5120, 6144 and 8192 bytes. 
+8. There should be no error logged. No Fail count after the test is completed.
+
+
+	
+
